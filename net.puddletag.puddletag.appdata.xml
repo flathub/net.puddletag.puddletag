@@ -9,6 +9,10 @@
   <name>Puddletag</name>
   <summary>A powerful ID3 tag editor</summary>
 
+  <developer id="Puddletag Authors">
+    <name>Puddletag Authors</name>
+  </developer>
+
   <releases>
     <release date="2024-03-05" version="2.3.0" />
   </releases>
@@ -25,7 +29,7 @@
       The usual tag editor features are supported like extracting tag information from filenames, renaming files based on their tags by using patterns and basic tag editing.
     </p>
     <p>
-      The usual tag editor features are supported:
+      The usual tag editor features are supported:</p>
       <ul>
         <li>
           Extracting tag information from filenames
@@ -43,7 +47,6 @@
           Web lookups using Amazon (including cover art), Discogs (does cover art too!), FreeDB and MusicBrainz
         </li>
       </ul>
-    </p>
   </description>
 
   <screenshots>
