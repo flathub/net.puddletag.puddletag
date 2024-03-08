@@ -10,7 +10,7 @@
   <summary>A powerful ID3 tag editor</summary>
 
   <releases>
-    <release date="2022-07-05" version="2.2.0" />
+    <release date="2024-03-05" version="2.3.0" />
   </releases>
 
   <categories>
@@ -60,5 +60,7 @@
 
   <url type="homepage">https://docs.puddletag.net/</url>
   <url type="bugtracker">https://github.com/puddletag/puddletag/issues/</url>
+
+
   <content_rating type="oars-1.1" />
 </component>

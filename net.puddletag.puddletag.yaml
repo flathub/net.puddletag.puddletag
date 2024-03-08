@@ -4,7 +4,7 @@ runtime: org.kde.Platform
 runtime-version: '5.15-22.08'
 sdk: org.kde.Sdk
 base: com.riverbankcomputing.PyQt.BaseApp
-base-version: 5.15-22.08
+base-version: '5.15-22.08' #23.08 doesn't work due to a regression in pyparsing, see here: https://github.com/puddletag/puddletag/issues/876
 
 command: puddletag
 rename-desktop-file: puddletag.desktop
@@ -45,8 +45,8 @@ modules:
         --prefix=${FLATPAK_DEST} "mutagen" --no-build-isolation
     sources:
       - type: file
-        url: https://files.pythonhosted.org/packages/b1/54/d1760a363d0fe345528e37782f6c18123b0e99e8ea755022fd51f1ecd0f9/mutagen-1.46.0.tar.gz
-        sha256: 6e5f8ba84836b99fe60be5fb27f84be4ad919bbb6b49caa6ae81e70584b55e58
+        url: https://files.pythonhosted.org/packages/81/e6/64bc71b74eef4b68e61eb921dcf72dabd9e4ec4af1e11891bbd312ccbb77/mutagen-1.47.0.tar.gz
+        sha256: 719fadef0a978c31b4cf3c956261b3c58b6948b32023078a2117b1de09f0fc99
         x-checker-data:
           type: pypi
           name: mutagen
@@ -57,11 +57,23 @@ modules:
       - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}" --prefix=${FLATPAK_DEST} "pillow" --no-build-isolation
     sources:
       - type: file
-        url: https://files.pythonhosted.org/packages/00/d5/4903f310765e0ff2b8e91ffe55031ac6af77d982f0156061e20a4d1a8b2d/Pillow-9.5.0.tar.gz
-        sha256: bf548479d336726d7a0eceb6e767e179fbde37833ae42794602631a070d630f1
+        url: https://files.pythonhosted.org/packages/f8/3e/32cbd0129a28686621434cbf17bb64bf1458bfb838f1f668262fefce145c/pillow-10.2.0.tar.gz
+        sha256: e87f0b2c78157e12d7686b27d63c070fd65d994e8ddae6f328e0dcf4a0cd007e
         x-checker-data:
           type: pypi
           name: pillow
+
+  - name: python3-unidecode
+    buildsystem: simple
+    build-commands:
+      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}" --prefix=${FLATPAK_DEST} "unidecode" --no-build-isolation
+    sources:
+      - type: file
+        url: https://files.pythonhosted.org/packages/f7/89/19151076a006b9ac0dd37b1354e031f5297891ee507eb624755e58e10d3e/Unidecode-1.3.8.tar.gz
+        sha256: cfdb349d46ed3873ece4586b96aa75258726e2fa8ec21d6f00a591d98806c2f4
+        x-checker-data:
+          type: pypi
+          name: unidecode
 
   - name: puddletag
     buildsystem: simple
@@ -73,8 +85,8 @@ modules:
       - rm -r /app/share/pixmaps
     sources:
       - type: archive
-        url: https://github.com/puddletag/puddletag/archive/refs/tags/2.2.0.tar.gz
-        sha256: fc26a9fcd842e3cd4b97ac83b9fdbd270d73f2a90285e47135e2719dcacc986a
+        url: https://github.com/puddletag/puddletag/archive/refs/tags/2.3.0.tar.gz
+        sha256: 088860de9cfe91b761c95909d27ab763c9b9cbd30fd0f5e6cedf807cfb929bdd
         x-checker-data:
           type: anitya
           project-id: 3727
