@@ -88,8 +88,8 @@ modules:
       - rm -r /app/share/pixmaps
     sources:
       - type: archive
-        url: https://github.com/puddletag/puddletag/archive/refs/tags/2.3.0.tar.gz
-        sha256: 088860de9cfe91b761c95909d27ab763c9b9cbd30fd0f5e6cedf807cfb929bdd
+        url: https://github.com/puddletag/puddletag/archive/refs/tags/2.4.0.tar.gz
+        sha256: 892864eabdb9bea627087e6b342a861ec6b8400d7f8e706a85565d71a1fb1be3
         x-checker-data:
           type: anitya
           project-id: 3727
