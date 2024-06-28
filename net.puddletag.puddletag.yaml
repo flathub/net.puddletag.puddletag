@@ -1,10 +1,11 @@
 app-id: net.puddletag.puddletag
 
 runtime: org.kde.Platform
-runtime-version: 5.15-22.08
+
+runtime-version: '5.15-23.08'
 sdk: org.kde.Sdk
 base: com.riverbankcomputing.PyQt.BaseApp
-base-version: 5.15-22.08   #23.08 doesn't work due to a regression in pyparsing, see here: https://github.com/puddletag/puddletag/issues/876
+base-version: 5.15-23.08
 
 command: puddletag
 rename-desktop-file: puddletag.desktop
