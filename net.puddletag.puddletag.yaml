@@ -33,8 +33,8 @@ modules:
         --prefix=${FLATPAK_DEST} "configobj" --no-build-isolation
     sources:
       - type: file
-        url: https://files.pythonhosted.org/packages/cb/87/17d4c6d634c044ab08b11c0cd2a8a136d103713d438f8792d7be2c5148fb/configobj-5.0.8.tar.gz
-        sha256: 6f704434a07dc4f4dc7c9a745172c1cad449feb548febd9f7fe362629c627a97
+        url: https://files.pythonhosted.org/packages/f5/c4/c7f9e41bc2e5f8eeae4a08a01c91b2aea3dfab40a3e14b25e87e7db8d501/configobj-5.0.9.tar.gz
+        sha256: 03c881bbf23aa07bccf1b837005975993c4ab4427ba57f959afdd9d1a2386848
         x-checker-data:
           type: pypi
           name: configobj
