@@ -1,0 +1,12 @@
+--- pyproject.toml	2025-04-14 10:31:44.346746550 +0100
++++ patched_pyproject.toml	2025-04-14 10:31:22.433750617 +0100
+@@ -14,8 +14,7 @@
+ keywords = [
+   "Imaging",
+ ]
+-license = "MIT-CMU"
+-license-files = [ "LICENSE" ]
++license = { file = "LICENSE" }
+ authors = [
+   { name = "Jeffrey A. Clark", email = "aclark@aclark.net" },
+ ]
