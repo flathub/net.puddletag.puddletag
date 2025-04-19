@@ -56,6 +56,7 @@ modules:
   - name: python3-pillow
     buildsystem: simple
     build-commands:
+      - pip3 show setuptools
       - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
         --prefix=${FLATPAK_DEST} "pillow" --no-build-isolation
     sources:
