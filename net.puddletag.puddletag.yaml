@@ -60,8 +60,8 @@ modules:
         --prefix=${FLATPAK_DEST} "pillow" --no-build-isolation
     sources:
       - type: file
-        url: https://files.pythonhosted.org/packages/f3/af/c097e544e7bd278333db77933e535098c259609c4eb3b85381109602fb5b/pillow-11.1.0.tar.gz
-        sha256: 368da70808b36d73b4b390a8ffac11069f8a5c85f29eff1f1b01bcf3ef5b2a20
+        url: https://files.pythonhosted.org/packages/af/cb/bb5c01fcd2a69335b86c22142b2bccfc3464087efb7fd382eee5ffc7fdf7/pillow-11.2.1.tar.gz
+        sha256: a64dd61998416367b7ef979b73d3a85853ba9bec4c2925f74e588879a58716b6
         x-checker-data:
           type: pypi
           name: pillow
@@ -73,8 +73,8 @@ modules:
         --prefix=${FLATPAK_DEST} "unidecode" --no-build-isolation
     sources:
       - type: file
-        url: https://files.pythonhosted.org/packages/f7/89/19151076a006b9ac0dd37b1354e031f5297891ee507eb624755e58e10d3e/Unidecode-1.3.8.tar.gz
-        sha256: cfdb349d46ed3873ece4586b96aa75258726e2fa8ec21d6f00a591d98806c2f4
+        url: https://files.pythonhosted.org/packages/94/7d/a8a765761bbc0c836e397a2e48d498305a865b70a8600fd7a942e85dcf63/Unidecode-1.4.0.tar.gz
+        sha256: ce35985008338b676573023acc382d62c264f307c8f7963733405add37ea2b23
         x-checker-data:
           type: pypi
           name: unidecode
