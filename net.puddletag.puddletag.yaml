@@ -90,8 +90,8 @@ modules:
       - sed -i '1s|#!python|#!/usr/bin/env python3|' /app/bin/puddletag
     sources:
       - type: archive
-        url: https://github.com/puddletag/puddletag/archive/refs/tags/2.4.0.tar.gz
-        sha256: 892864eabdb9bea627087e6b342a861ec6b8400d7f8e706a85565d71a1fb1be3
+        url: https://github.com/puddletag/puddletag/archive/refs/tags/2.5.0.tar.gz
+        sha256: aa04bd796a78ca726c91c28ade0b64a9d693cac307713728359dfc551d250815
         x-checker-data:
           type: anitya
           project-id: 3727
