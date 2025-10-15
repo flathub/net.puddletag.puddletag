@@ -60,8 +60,8 @@ modules:
         --prefix=${FLATPAK_DEST} "pillow" --no-build-isolation
     sources:
       - type: file
-        url: https://files.pythonhosted.org/packages/f3/0d/d0d6dea55cd152ce3d6767bb38a8fc10e33796ba4ba210cbab9354b6d238/pillow-11.3.0.tar.gz
-        sha256: 3828ee7586cd0b2091b6209e5ad53e20d0649bbe87164a459d0676e035e8f523
+        url: https://files.pythonhosted.org/packages/5a/b0/cace85a1b0c9775a9f8f5d5423c8261c858760e2466c79b2dd184638b056/pillow-12.0.0.tar.gz
+        sha256: 87d4f8125c9988bfbed67af47dd7a953e2fc7b0cc1e7800ec6d2080d490bb353
         x-checker-data:
           type: pypi
           name: pillow
@@ -104,8 +104,8 @@ modules:
     buildsystem: cmake-ninja
     sources:
       - type: archive
-        url: https://github.com/acoustid/chromaprint/releases/download/v1.5.1/chromaprint-1.5.1.tar.gz
-        sha256: a1aad8fa3b8b18b78d3755b3767faff9abb67242e01b478ec9a64e190f335e1c
+        url: https://github.com/acoustid/chromaprint/releases/download/v1.6.0/chromaprint-1.6.0.tar.gz
+        sha256: 9d33482e56a1389a37a0d6742c376139fa43e3b8a63d29003222b93db2cb40da
         x-checker-data:
           type: anitya
           project-id: 286
