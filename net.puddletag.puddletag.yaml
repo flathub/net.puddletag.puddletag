@@ -1,15 +1,12 @@
 app-id: net.puddletag.puddletag
-
 runtime: org.kde.Platform
-runtime-version: 5.15-24.08
+runtime-version: 5.15-25.08
 sdk: org.kde.Sdk
 base: com.riverbankcomputing.PyQt.BaseApp
-base-version: 5.15-24.08
-
+base-version: 5.15-25.08
 command: puddletag
 rename-desktop-file: puddletag.desktop
 rename-icon: puddletag
-
 finish-args:
   - --device=dri
   - --filesystem=xdg-music
@@ -19,13 +16,14 @@ finish-args:
   - --socket=fallback-x11
   - --socket=pulseaudio
   - --socket=wayland
-
 build-options:
   env:
     - BASEAPP_REMOVE_WEBENGINE=1
 cleanup-commands:
   - /app/cleanup-BaseApp.sh
-
+cleanup:
+  - /share/man
+  - /share/pixmaps
 modules:
   - name: python3-configobj
     buildsystem: simple
@@ -55,6 +53,8 @@ modules:
 
   - name: python3-pybind11
     buildsystem: simple
+    cleanup:
+      - "*"
     build-commands:
       - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
         --prefix=${FLATPAK_DEST} "pybind11" --no-build-isolation
@@ -93,14 +93,25 @@ modules:
           type: pypi
           name: unidecode
 
+  - name: chromaprint
+    buildsystem: cmake-ninja
+    sources:
+      - type: archive
+        url: https://github.com/acoustid/chromaprint/releases/download/v1.6.0/chromaprint-1.6.0.tar.gz
+        sha256: 9d33482e56a1389a37a0d6742c376139fa43e3b8a63d29003222b93db2cb40da
+        x-checker-data:
+          type: anitya
+          project-id: 286
+          stable-only: true
+          url-template: https://github.com/acoustid/chromaprint/releases/download/v$version/chromaprint-$version.tar.gz
+
   - name: puddletag
     buildsystem: simple
     build-commands:
       - python3 setup.py build
       - python3 setup.py install --skip-build --prefix=${FLATPAK_DEST} --root=/ --optimize=1
-      - install -Dm644 /app/share/{pixmaps,icons/hicolor/256x256/apps}/puddletag.png
-      - install -D -m 644 ${FLATPAK_ID}.appdata.xml /app/share/metainfo/${FLATPAK_ID}.metainfo.xml
-      - rm -r /app/share/pixmaps
+      - install -Dm644 puddletag.png -t /app/share/icons/hicolor/256x256/apps/
+      - install -Dm644 ${FLATPAK_ID}.appdata.xml /app/share/metainfo/${FLATPAK_ID}.metainfo.xml
       - sed -i '1s|#!python|#!/usr/bin/env python3|' /app/bin/puddletag
     sources:
       - type: archive
@@ -113,15 +124,3 @@ modules:
           url-template: https://github.com/puddletag/puddletag/archive/refs/tags/$version.tar.gz
       - type: file
         path: net.puddletag.puddletag.appdata.xml
-
-  - name: chromaprint
-    buildsystem: cmake-ninja
-    sources:
-      - type: archive
-        url: https://github.com/acoustid/chromaprint/releases/download/v1.6.0/chromaprint-1.6.0.tar.gz
-        sha256: 9d33482e56a1389a37a0d6742c376139fa43e3b8a63d29003222b93db2cb40da
-        x-checker-data:
-          type: anitya
-          project-id: 286
-          stable-only: true
-          url-template: https://github.com/acoustid/chromaprint/releases/download/v$version/chromaprint-$version.tar.gz
