@@ -24,6 +24,7 @@
         <li>Automate repetitive tasks</li>
         <li>Web lookups using Amazon (including cover art), Discogs (does cover art too!), FreeDB and MusicBrainz</li>
       </ul>
+    <p>**Note: By default this Flatpak only has access to the Music and Downloads folders. If you want to edit files in other locations, make sure to add the permission (e.g. `filesystem=host`) in your Flatpak settings **</p>
   </description>
   <screenshots>
     <screenshot type="default">
